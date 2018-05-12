@@ -1,5 +1,5 @@
 # SQLiteHelper.net
-List of Simplified Functions
+- List of Simplified Functions
 GetTableStatus
 GetTableList
 GetColumnStatus
