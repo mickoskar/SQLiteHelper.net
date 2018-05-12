@@ -1,50 +1,52 @@
 # SQLiteHelper.net
-- List of Simplified Functions
-GetTableStatus
-GetTableList
-GetColumnStatus
-CreateTable
-UpdateTableStructure
-BeginTransaction, Commit, Rollback
-Select
-Execute
-ExecuteScalar
-Escape
-Insert
-Update
-LastInsertRowId
-RenameTable
-CopyAllData
-DropTable
-ShowDatabase
-AttachDatabase, DetachDatabase
-Getting Start
-Add this using statement at the top of your class:
+## List of Simplified Functions
+>GetTableStatus
+>GetTableList
+>GetColumnStatus
+>CreateTable
+>UpdateTableStructure
+>BeginTransaction, Commit, Rollback
+>Select
+>Execute
+>ExecuteScalar
+>Escape
+>Insert
+>Update
+>LastInsertRowId
+>RenameTable
+>CopyAllData
+>DropTable
+>ShowDatabase
+>AttachDatabase, DetachDatabase
+>Getting Start
 
-using System.Data.SQLite;
-SQLiteConnection and SQLiteCommand have to be initialized before using SQLiteHelper:
+###Add this using statement at the top of your class:
 
-Example:
+        using System.Data.SQLite;
+        SQLiteConnection and SQLiteCommand have to be initialized before using SQLiteHelper:
 
-using (SQLiteConnection conn = new SQLiteConnection("data source=C:\\data"))
-{
-    using (SQLiteCommand cmd = new SQLiteCommand())
+    Example:
+
+    using (SQLiteConnection conn = new SQLiteConnection("data source=C:\\data"))
     {
-        cmd.Connection = conn;
-        conn.Open();
+        using (SQLiteCommand cmd = new SQLiteCommand())
+        {
+            cmd.Connection = conn;
+            conn.Open();
  
-        SQLiteHelper sh = new SQLiteHelper(cmd);
+            SQLiteHelper sh = new SQLiteHelper(cmd);
  
-        // do something...
+            // do something...
 
-        conn.Close();
+            conn.Close();
+        }
     }
-}
-1. GetTableStatus
-Get all information of tables in the database.
 
-DataTable dt = sh.GetTableStatus();
-Sample result:
+1. GetTableStatus
+    Get all information of tables in the database.
+
+    DataTable dt = sh.GetTableStatus();
+    Sample result:
 
 type	name	tbl_name	rootpage	sql
 table	sqlite_sequence	sqlite_sequence	3	CREATE TABLE sqlite_sequence(name,seq)
